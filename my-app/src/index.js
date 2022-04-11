@@ -1,17 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'; // импортируем ядро реакта
+import ReactDOM from 'react-dom'; // импортируем реакт дом для того чтобы вмонтировать в него приложение
+import App from './App';  //  импортируем компонент (приложение)
 
+// вызвваем функцию рендер с двумя параметрами. Первый - компонент, который будем монтировать. 
+// Второй - блок куда будем монтировать
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
