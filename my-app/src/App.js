@@ -2,7 +2,7 @@ import React from 'react'; // реакт импортируем в каждый 
 
 import FuncComponent from './components/FuncComponent';
 import ClassComponent from './components/ClassComponent';
-
+import ClassCounter from './components/ClassCounter';
 
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <FuncComponent />
       <ClassComponent />
+      <ClassCounter />
     </div>
   );
 }
