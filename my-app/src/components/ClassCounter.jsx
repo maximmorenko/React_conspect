@@ -20,14 +20,14 @@ class ClassCounter extends React.Component {
       // напрямую изменять состояния нельзя, используем специальную для этого функцию setState
       this.setState(
         state => ({
-          count: this.state.count + 1
+          count: this.state.count + 2
         })
         )
     }
     decrement() {
       this.setState(
         state => ({
-          count: this.state.count - 1
+          count: this.state.count - 2
         })
         )
     }
@@ -37,7 +37,8 @@ class ClassCounter extends React.Component {
       // поскольку мы находимся внутри класс, чтобы обратиться к свойствам используем this
       return (
         <div>
-          <h1>{this.state.count}</h1> 
+          <h1>Счетчик на классах:</h1>
+          <h2>{this.state.count}</h2> 
           <button onClick={this.increment}>Increment</button>
           <button onClick={this.decrement}>Decrement</button>
         </div>
