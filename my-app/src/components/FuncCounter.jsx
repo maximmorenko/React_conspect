@@ -20,11 +20,11 @@ const FuncCounter = function() {
     }
 
     return (
-      <div className='customClass'>
-        <h1>Счетчик на функциях:</h1>
-        <h2>{count}</h2> 
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
+      <div className="post">
+        <h2>Счетчик на функциях:</h2>
+        <h3>{count}</h3> 
+        <button className='post__btns' onClick={increment}>Increment</button>
+        <button className='post__btns' onClick={decrement}>Decrement</button>
       </div>
     );
   };

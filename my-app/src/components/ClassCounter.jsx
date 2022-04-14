@@ -36,11 +36,11 @@ class ClassCounter extends React.Component {
       // в отличии от функциональных компонентов жсх воозвращаем в круглых скобках
       // поскольку мы находимся внутри класс, чтобы обратиться к свойствам используем this
       return (
-        <div>
-          <h1>Счетчик на классах:</h1>
-          <h2>{this.state.count}</h2> 
-          <button onClick={this.increment}>Increment</button>
-          <button onClick={this.decrement}>Decrement</button>
+        <div className="post">
+          <h2>Счетчик на классах:</h2>
+          <h3>{this.state.count}</h3> 
+          <button className='post__btns' onClick={this.increment}>Increment</button>
+          <button className='post__btns' onClick={this.decrement}>Decrement</button>
         </div>
       );
     }
