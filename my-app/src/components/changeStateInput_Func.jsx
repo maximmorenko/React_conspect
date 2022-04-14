@@ -17,15 +17,19 @@ const ChangeStateInput = function() {
     // } 
 
     return (
-        <div>
-          <h1>Изменяем состояние поля ввода в онлайн режиме:</h1>
-          <h2>{txt}</h2> 
-          <input 
-          tupe="text" 
-          value={txt}
-          onChange={event => setText(event.target.value)}
-          />
-          <button onClick={event => setText(event.target.value = "введите текст")}>очистить</button>
+        <div className="post">
+          <h2>Изменяем состояние поля ввода в онлайн режиме:</h2>
+            <div>
+              <h3 className='post__btns'>{txt}</h3>
+            </div>            
+            <div className='post__btns'>
+            <input 
+              tupe="text" 
+              value={txt}
+              onChange={event => setText(event.target.value)}
+            />
+            <button onClick={event => setText(event.target.value = "введите текст")}>очистить</button>
+          </div>          
         </div>
       );
 }
