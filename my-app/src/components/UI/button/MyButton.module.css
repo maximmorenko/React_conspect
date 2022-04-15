@@ -1,0 +1,12 @@
+/* css модуль позволяет генерировать уникальные цсс классы (проверяем в инспекторе)*/
+
+.myBtn {
+    padding: 5px 15px;
+    color: rgb(0, 40, 27);
+    font-size: 14px;
+    /* фон прозрачный */
+    background-color: transparent;
+    /* solid - сплошной контур */
+    border: 2px solid teal;
+    cursor: pointer;
+}

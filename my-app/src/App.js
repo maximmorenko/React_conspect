@@ -7,6 +7,7 @@ import './style/App.css';
 //import ChangeStateInput from './components/ChangeStateInput_Func';
 //import PostItem from './components/PostItem';
 import PostList from "./components/PostList";
+import MyButton from "./components/UI/button/MyButton"
 
 function App() {
    // Для передачи массива постов использдуем схему с деструктуризацие хука юзстейт 
@@ -15,11 +16,6 @@ function App() {
     {id: 1, title: 'Javascript 1', body: 'Description'},
     {id: 2, title: 'Javascript 2', body: 'Description'},
     {id: 3, title: 'Javascript 3', body: 'Description'}
-  ]);
-  const [arrPosts2, setPosts2] = useState([
-    {id: 1, title: 'Java 1', body: 'Description'},
-    {id: 2, title: 'Java 2', body: 'Description'},
-    {id: 3, title: 'Java 3', body: 'Description'}
   ]);
   return (
     <div className="App">
@@ -30,8 +26,12 @@ function App() {
       {/* <ChangeStateInput /> */}
       {/* прописываем пропсы которые будем передавать */}
       {/* <PostItem post={{id: 1, tittle: 'Javascript', body: 'Description'}}/>  */}
-      <PostList arrPosts={arrPosts} title='Список постов 1'/>
-      <PostList arrPosts={arrPosts2} title='Список постов 2'/>
+      <form>
+        <input type='text' placeholder='Название поста'/>
+        <input type='text' placeholder='Описание поста'/>
+        <MyButton>Создать пост</MyButton>
+      </form>
+      <PostList arrPosts={arrPosts} title='Посты про Javascript' desc='Javascript лучше чем Java'/>
     </div>
   );
 }
