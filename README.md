@@ -7,7 +7,7 @@ cd my-app
 npm start
 
 git add .
-git commit -m "статический список постов"
+git commit -m "генерируем уникальный класс кнопке"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
