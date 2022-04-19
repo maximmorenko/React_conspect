@@ -10,7 +10,7 @@ cd my-app
 npm start
 
 git add .
-git commit -m "Расширение React Developer Tools"
+git commit -m "передаем пропсы сверху вниз через callback"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
