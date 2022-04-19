@@ -1,5 +1,5 @@
 import React from 'react';
-
+import MyButton from './UI/button/MyButton';
 // компоненты могут принимать входные данные (prors) сокр. от пропертис
 // иными словами это аргумент функции, которым мы можем что-то из вне передавать
 function PostItem(props) {
@@ -14,7 +14,10 @@ function PostItem(props) {
                 </div>
             </div>
             <div>
-                <button className='post__btns'>Удалить</button>
+                {/* вызываем функцию удаления при нажатии, и передаем в нее текущий пост как параметр */}
+                <MyButton 
+                onClick={() => props.remove(props.post)
+                }>Удалить</MyButton>
             </div>
         </div>
     );

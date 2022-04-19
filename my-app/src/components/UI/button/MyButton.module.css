@@ -6,8 +6,9 @@
     color: rgb(0, 40, 27);
     font-size: 14px;
     /* фон прозрачный */
-    background-color: transparent;
+    background-color: rgb(222, 222, 222);
     /* solid - сплошной контур */
     border: 2px solid teal;
     cursor: pointer;
+    border-radius: 5px;
 }
