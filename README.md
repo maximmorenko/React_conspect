@@ -7,7 +7,7 @@ cd my-app
 npm start
 
 git add .
-git commit -m "очищаем инпуты после добавления поста"
+git commit -m "передаем пост как объект"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
