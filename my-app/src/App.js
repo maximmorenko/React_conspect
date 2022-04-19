@@ -20,6 +20,7 @@ function App() {
     {id: 3, title: 'Javascript 3', body: 'Description'}
   ]);
   const [title, setTitle] = useState('')
+  const [body, setBody] = useState('') // где steBody - функция, которая будет изменять body
   // Второй способ полуения данных
   // Получение данных из неуправляемого инпута (компонента)
   // для етого используем хук useRef()
@@ -34,9 +35,21 @@ function App() {
     // мы создаем новое состояние, по умолчанию с пустой строкой
     // при создасоздании поста страница будет обновляться, чтобы этого не было используем превеент дефолт
     evt.preventDefault();
+    const newPost = {
+      id: Date.now(),
+      // id получим из текущей даты 
+      title,
+      body
+    }
+    // проверяем в логах, что там нужный нам заголовок и тело
+    console.log(newPost);
     // предотвращаем дефолтное поведение браузера
-    console.log(title)
-    console.log(bodyInputRef.current.value)
+    // console.log(title)
+    // console.log(bodyInputRef.current.value)
+    // созданый объект добавляем в массив постов
+    // не передаем объект напрямую, а вызываем функцию 
+    setPosts([...arrPosts, newPost]); // разворачиваем старый массив с уже существующими постами
+    // и в конец добавляем новый пост
   }
   return (
     <div className="App">
@@ -59,15 +72,23 @@ function App() {
         />
 
         {/* неуправляемый компонент*/}
-        <MyInput 
+        {/* <MyInput 
         // указываем пропс ref у инпута и передаем туда ссылку созданую с помощью useRef
         // чтобы передать ссылку нужно компонент обернуть в функцию forwardRef(), 
         // вторым параметром у которой и есть ссылка. идем в компонент MyInput.
         ref={bodyInputRef}
         type='text' 
         placeholder='Описание поста'
-        />
+        /> */}
         {/* вешаем слушатель события на кнопку, при нажатии вызываем функцию добавляющую пост*/}
+
+        {/* создадим еще один инпут. управляемый. для того чтобы поле можно было очишать */}
+        <MyInput 
+        value={body}
+        onChange={e => setBody(e.target.value)}
+        type='text' 
+        placeholder='Описание поста'
+        />
         <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
       <PostList arrPosts={arrPosts} title='Посты про Javascript' desc='Javascript лучше чем Java'/>

@@ -7,7 +7,8 @@ function PostItem(props) {
         <div className="post">
             <div className="post__content">
                 {/* указываем пути к пропсам которые хотим получить */}
-                <strong>{props.post.id}. {props.post.title}</strong>
+                <strong>{props.number}. {props.post.title}</strong>
+                {/* заменим пропс id на number {props.post.id}*/}
                 <div>
                   {props.post.body}
                 </div>
