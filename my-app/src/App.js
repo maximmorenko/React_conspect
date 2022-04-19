@@ -1,4 +1,5 @@
 import React, {useState} from "react"; // реакт импортируем в каждый файл где создаем проект
+import {useRef} from "react";
 import './style/App.css';
 //import FuncComponent from './components/FuncComponent';
 //import ClassComponent from './components/ClassComponent';
@@ -19,6 +20,13 @@ function App() {
     {id: 3, title: 'Javascript 3', body: 'Description'}
   ]);
   const [title, setTitle] = useState('')
+  // Второй способ полуения данных
+  // Получение данных из неуправляемого инпута (компонента)
+  // для етого используем хук useRef()
+  const bodyInputRef = useRef()
+  // с помощью этого хука можно получить доступ к дом элементу, и уже у этого элемента забрать value
+  // все хуки импортируем из реакт import {useRef} from "react";
+
   const addNewPost = (evt) => {
     // функция добавления поста
     // для того чтобы создать пост нам нужно добавить название и описание
@@ -28,7 +36,7 @@ function App() {
     evt.preventDefault();
     // предотвращаем дефолтное поведение браузера
     console.log(title)
-
+    console.log(bodyInputRef.current.value)
   }
   return (
     <div className="App">
@@ -47,8 +55,18 @@ function App() {
         // из ивента с поля таргет достаем поле значение(value) и помещаем его в состояние setTitle(e.target.value)
         onChange={e => setTitle(e.target.value)}
         type='text' 
-        placeholder='Название поста'/>
-        <MyInput type='text' placeholder='Описание поста'/>
+        placeholder='Название поста'
+        />
+
+        {/* неуправляемый компонент*/}
+        <MyInput 
+        // указываем пропс ref у инпута и передаем туда ссылку созданую с помощью useRef
+        // чтобы передать ссылку нужно компонент обернуть в функцию forwardRef(), 
+        // вторым параметром у которой и есть ссылка. идем в компонент MyInput.
+        ref={bodyInputRef}
+        type='text' 
+        placeholder='Описание поста'
+        />
         {/* вешаем слушатель события на кнопку, при нажатии вызываем функцию добавляющую пост*/}
         <MyButton onClick={addNewPost}>Создать пост</MyButton>
       </form>
