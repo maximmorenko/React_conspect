@@ -2,12 +2,15 @@
 Установка:
 https://reactjs.org/docs/create-a-new-react-app.html
 
+Расширение React Developer Tools !!!!!!!!!!!!!!!
+После установки перегрузить хром
+
 npx create-react-app my-app
 cd my-app
 npm start
 
 git add .
-git commit -m "передаем пост как объект"
+git commit -m "Расширение React Developer Tools"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
