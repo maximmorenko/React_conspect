@@ -10,7 +10,7 @@ cd my-app
 npm start
 
 git add .
-git commit -m "передаем пропсы сверху вниз через callback"
+git commit -m "условная отрисовка"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
