@@ -1,8 +1,9 @@
-import React, { useState } from "react"; // реакт импортируем в каждый файл где создаем проект
+import React, {useMemo, useState} from "react"; // реакт импортируем в каждый файл где создаем проект
 import PostList from "./components/PostList";
 import './style/App.css';
 import PostForm from "./components/PostForm";
 import MySelect from "./components/UI/select/MySelect";
+import MyInput from "./components/UI/input/MyInput";
 //import FuncComponent from './components/FuncComponent';
 //import ClassComponent from './components/ClassComponent';
 //import ClassCounter from './components/ClassCounter';
@@ -16,8 +17,16 @@ function App() {
     {title: 'Пост по умолчанию', body: 'описание'}
   ])
 
-  // Реалиоозовуем двухстороннее связывание селекта
-  const [selectedSort, setSelectedSort] = useState('')
+  // Поиск поста
+  // колбек будет вызван только в том случае если какая-то из зависимостей поменяет свое значение
+  //const sortedPosts = useMemo(() => {
+
+  //}, [selectedSort, posts])
+
+  // поиск
+  // нам нужно фильтровать массив постов и удалять лишние, но так как они не возвроащаются обратно,
+  // нужно фильтровать копию массива.
+  const [searchQuery, setSearchQuery] = useState('')
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost ])
@@ -33,6 +42,9 @@ function App() {
     setPosts(posts.filter(p => p.id !== post.id))
   }
 
+  
+  // Реалиоозовуем двухстороннее связывание селекта
+  const [selectedSort, setSelectedSort] = useState('')
   // сортируем массив
   const sortPosts = (sort) => {
     // перезаписуем состояние
@@ -49,6 +61,14 @@ function App() {
       <PostForm create={createPost}/>
       <hr style={{margin: '15px 0'}}></hr>
       <div>
+        {/* поиск */}
+        <MyInput 
+        value={selectedSort}
+        onChange={e => setSelectedSort(e.target.value)} // передаем сюда значение setSelectedSort(e.target.value)
+        type='text' 
+        placeholder='Поиск'
+        />
+
         <MySelect
         // в значение передаем выбраный опшн
         value={selectedSort}
