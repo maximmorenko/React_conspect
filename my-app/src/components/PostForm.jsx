@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import MyButton from "./UI/button/MyButton"
 import MyInput from "./UI/input/MyInput";
-import {useRef} from "react";
+
 
 function PostForm({create}) {
     const [post, setPost] = useState({title: '', body: ''})
