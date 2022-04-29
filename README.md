@@ -10,11 +10,13 @@ cd my-app
 npm start
 
 git add .
-git commit -m "поиск поста"
+git commit -m "модальное окно"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
 2. {/*привет коментарий в JSX*/}
+
+https://www.youtube.com/watch?v=i2Yf7JZonB4 - модальное окно
 
 
 
