@@ -10,7 +10,7 @@ cd my-app
 npm start
 
 git add .
-git commit -m "модальное окно"
+git commit -m "методы жизненного цикла"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)
