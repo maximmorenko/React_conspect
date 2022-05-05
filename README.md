@@ -9,8 +9,17 @@ npx create-react-app my-app
 cd my-app
 npm start
 
+===================================
+
+анимация
+
+https://reactcommunity.org/react-transition-group/
+
+npm install react-transition-group --save
+
+===================================
 git add .
-git commit -m "методы жизненного цикла"
+git commit -m "анимация transition-group"
 git push origin master
 
 1. Чистим две основные папки public(монтируемый код в div id="root") и src(исходный код)

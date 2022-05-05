@@ -42,3 +42,26 @@
     border-radius: 5px;
     background-color: rgb(212, 212, 212);
 }
+
+/* копируем стили из сайта */
+/* меняем в названвиях item на post*/
+.post-enter {
+    /* opacity: 0; */
+    transform: translateX(-350px);
+  }
+  .post-enter-active {
+    /* opacity: 1; */
+    transform: translateX(0); 
+    /* при добавление поста будет выезжать на 150px*/
+    transition: all 500ms ease-in;
+  }
+  .post-exit {
+    opacity: 1;
+  }
+  .post-exit-active {
+      /* меняем опасти на трансформ по оси х */
+    /* opacity: 0; */
+    transform: translateX(-350px);
+    /* при удалении поста будет заезжать на 150px */
+    transition: all 500ms ease-in;
+  }
