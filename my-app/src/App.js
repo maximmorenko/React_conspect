@@ -6,6 +6,7 @@ import PostList from './components/PostList';
 
 import MyModal from './components/UI/MyModal/MyModal';
 import MyButton from './components/UI/button/MyButton';
+import ConditionalProps from './components/ConditionalProps'
 
 
 function App() {
@@ -58,6 +59,9 @@ function App() {
       <hr style={{ margin: '15px 0' }} />
       <PostFilter filter={filter} setFilter={setFilter} />
       <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Посты про JS'} />
+      <hr style={{ margin: '15px 0' }} />
+      <ConditionalProps/>
+      <hr style={{ margin: '15px 0' }} />
     </div>
       );
     }
